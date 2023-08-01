@@ -25,15 +25,6 @@ int main (){
 
 std::cout << "Hello! Home Automation System!" << std::endl ;
 
-Test test1 ;
 
-std::cout << "Resylt: !" << test1.multiply() << std::endl ;
-
-test1.a_axis = 7 ;
-test1.b_axis = 7 ;
-
-Test test2 ; 
-std::cout << "Resylt: !" << test2.multiply() << std::endl ;
-std::cout << "Resylt: !" << test1.multiply() << std::endl ;
 
 }

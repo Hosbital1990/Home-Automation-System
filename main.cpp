@@ -24,6 +24,7 @@ double multiply (){
 int main (){
 
 std::cout << "Hello! Home Automation System!" << std::endl ;
+std::cout << "Hello! Home Automation System!" << std::endl ;
 
 
 

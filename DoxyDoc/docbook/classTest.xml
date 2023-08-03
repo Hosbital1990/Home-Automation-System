@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classTest">
+<title>Test Class Reference</title>
+<indexterm><primary>Test</primary></indexterm>
+<para>
+
+<para><link linkend="_classTest">Test</link> class for testing the HAS. </para>
+ 
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classTest_1ae5307ae925225676ab3e90c7a42d964a"/>double <emphasis role="strong">multiply</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classTest_1a91a5508989702ac4b069bf4cacbb22be"/>double <emphasis role="strong">a_axis</emphasis> {5}</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classTest_1a1c9cb8fb7264284fae1bc05e0dd81cd0"/>double <emphasis role="strong">b_axis</emphasis> {10}</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><link linkend="_classTest">Test</link> class for testing the HAS. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+/home/bitalebi/Project/Home_Automation_System/main.cpp</section>
+</section>

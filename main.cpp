@@ -4,10 +4,17 @@
 #include "device.h"
 #include "camera.h"
 
-//using namespace std ;
-
+/**
+ * \anchor
+ * \author Hossein Bitalebi
+ * 
+ * @mail: Hosseinbitalebi@gmail.com
+ * 
+ *  \copyright Harvard
+*/
 int a; 
 
+/// @brief Test class for testing the HAS
 class Test {
 
 public:

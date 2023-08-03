@@ -4,30 +4,50 @@
 <indexterm><primary>Test</primary></indexterm>
 <para>
 
-<para><link linkend="_classTest">Test</link> class for testing the HAS. </para>
+<para>Hosbital impementation. </para>
  
 </para>
 <simplesect>
     <title>Public Member Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classTest_1ae5307ae925225676ab3e90c7a42d964a"/>double <emphasis role="strong">multiply</emphasis> ()</para>
+            <listitem><para>double <link linkend="_classTest_1ae5307ae925225676ab3e90c7a42d964a">multiply</link> ()</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
     <title>Public Attributes    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_classTest_1a91a5508989702ac4b069bf4cacbb22be"/>double <emphasis role="strong">a_axis</emphasis> {5}</para>
+            <listitem><para>double <link linkend="_classTest_1a91a5508989702ac4b069bf4cacbb22be">a_axis</link> {5}</para>
 </listitem>
-            <listitem><para><anchor xml:id="_classTest_1a1c9cb8fb7264284fae1bc05e0dd81cd0"/>double <emphasis role="strong">b_axis</emphasis> {10}</para>
+            <listitem><para>double <link linkend="_classTest_1a1c9cb8fb7264284fae1bc05e0dd81cd0">b_axis</link> {10}</para>
 </listitem>
         </itemizedlist>
 </simplesect>
 <section>
 <title>Detailed Description</title>
 
-<para><link linkend="_classTest">Test</link> class for testing the HAS. </para>
+<para>Hosbital impementation. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classTest_1ae5307ae925225676ab3e90c7a42d964a"/>    <section>
+    <title>multiply()</title>
+<indexterm><primary>multiply</primary><secondary>Test</secondary></indexterm>
+<indexterm><primary>Test</primary><secondary>multiply</secondary></indexterm>
+<para><computeroutput>double Test::multiply ( )<computeroutput>[inline]</computeroutput></computeroutput></para></section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classTest_1a91a5508989702ac4b069bf4cacbb22be"/>    <section>
+    <title>a_axis</title>
+<indexterm><primary>a_axis</primary><secondary>Test</secondary></indexterm>
+<indexterm><primary>Test</primary><secondary>a_axis</secondary></indexterm>
+<para><computeroutput>double Test::a_axis {5}</computeroutput></para>    </section><anchor xml:id="_classTest_1a1c9cb8fb7264284fae1bc05e0dd81cd0"/>    <section>
+    <title>b_axis</title>
+<indexterm><primary>b_axis</primary><secondary>Test</secondary></indexterm>
+<indexterm><primary>Test</primary><secondary>b_axis</secondary></indexterm>
+<para><computeroutput>double Test::b_axis {10}</computeroutput></para></section>
 <para>
 The documentation for this class was generated from the following file:</para>
-/home/bitalebi/Project/Home_Automation_System/main.cpp</section>
+/home/bitalebi/Project/Home_Automation_System/<link linkend="_main_8cpp">main.cpp</link></section>
 </section>

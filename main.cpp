@@ -1,20 +1,25 @@
+/**
+ * \author Hossein Bitalebi
+ * \version 03.08.2023_V01
+ * \date 03 Aug 2023
+ * \copyright GNU public license
+ *  
+*/
+
+
 
 #include <iostream>
-
 #include "device.h"
 #include "camera.h"
 
-/**
- * \anchor
- * \author Hossein Bitalebi
- * 
- * @mail: Hosseinbitalebi@gmail.com
- * 
- *  \copyright Harvard
-*/
-int a; 
 
-/// @brief Test class for testing the HAS
+
+int a; 
+/**< variable comment after var*/
+
+
+
+/// @brief Hosbital impementation
 class Test {
 
 public:
@@ -28,11 +33,19 @@ double multiply (){
 
 };
 
+/**
+ * \brief HAS Project
+ * 
+ * \author Hosbital
+ * 
+ * Hosseinbitalebi@gmail.com 
+ * 
+*/
 int main (){
 
 std::cout << "Hello! Home Automation System!" << std::endl ;
 std::cout << "Hello! Home Automation System!" << std::endl ;
 
-
+return 0;
 
 }

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainpage">
+
+<para><formalpara><title>Author</title>
+
+<para>Hossein Bitalebi </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>03.08.2023_V01 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>03 Aug 2023 </para>
+</formalpara>
+<formalpara><title>Copyright</title>
+
+<para>GNU public license</para>
+</formalpara>
+This is the main page for the Home Automation System project. Here, you can provide a general overview of the project and its components.</para>
+
+<para>For more details, refer to the source code and documentation for individual classes and functions. </para>
+</chapter>

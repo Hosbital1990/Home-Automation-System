@@ -4,6 +4,10 @@
     <title>Home Automation System</title>
     </info>
 <chapter>
+    <title>Home Automation System</title>
+    <xi:include href="mainpage.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
     <title>Home-Automation-System</title>
     <xi:include href="md__home_bitalebi_Project_Home_Automation_System_README.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </chapter>

@@ -4,7 +4,7 @@
 #include "device.h"
 #include "camera.h"
 
-//using namespace std ;
+using namespace std ;
 
 int a; 
 

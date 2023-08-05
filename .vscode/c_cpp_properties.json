@@ -5,13 +5,12 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include/",
-                "/usr/include/**",// Path to the specific C++ standard library version
+                "/usr/include/**",
                 "/home/bitalebi/Project/Home_Automation_System/include/**"
-
             ],
             "defines": [],
             "cStandard": "c17",
-            "cppStandard": "c++14",
+            "cppStandard": "c++17",
             "intelliSenseMode": "linux-clang-x64",
             "compilerPath": "/usr/bin/g++-13"
         }

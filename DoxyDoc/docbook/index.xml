@@ -12,10 +12,6 @@
     <xi:include href="md__home_bitalebi_Project_Home_Automation_System_README.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </chapter>
 <chapter>
-    <title>Class Documentation</title>
-    <xi:include href="classTest.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-</chapter>
-<chapter>
     <title>File Documentation</title>
     <xi:include href="main_8cpp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="README_8md.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

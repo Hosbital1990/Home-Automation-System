@@ -19,5 +19,7 @@
 </formalpara>
 This is the main page for the Home Automation System project. Here, you can provide a general overview of the project and its components.</para>
 
-<para>For more details, refer to the source code and documentation for individual classes and functions. </para>
+<para>For more details, refer to the source code and documentation for individual classes and functions.</para>
+
+<para><link linkend="_">https://github.com/Hosbital1990/Home-Automation-System.git</link></para>
 </chapter>

@@ -19,7 +19,7 @@ public:
  * \details
  *          "please consoder use of move constructor for this and also any pther classes"
 */
-Device(): 
+Device(): device_power_state(false), device_message(new std::string_view(nullptr)) {} //
 
 /**
  * 

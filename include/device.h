@@ -17,9 +17,28 @@ public:
  * \brief Constractor of Device class
  * 
  * \details
- *          "please consoder use of move constructor for this and also any pther classes"
+ *          "please consider use of move constructor for this and also any pther classes"
 */
-Device(): device_power_state(false), device_message(new std::string_view(nullptr)) {} //
+
+/// @brief Defualt constructor
+Device(): device_power_state(false), device_message(std::make_unique<std::string>("")) {}; //
+
+/// @brief entire constructor
+/// @param device_power_state 
+/// @param device_working_level 
+/// @param device_address 
+/// @param device_name 
+/// @param device_message 
+Device(bool device_power_state, u_int8_t device_working_level, 
+int device_address, std::string_view device_name, std::shared_ptr<std::string> device_message)
+
+: device_power_state(device_power_state),
+  device_working_level(device_working_level),
+  device_address(device_address), 
+  device_name(device_name),
+  device_message(std::move(device_message)) {}   // more consider move 
+
+
 
 /**
  * 
@@ -38,8 +57,8 @@ int get_device_address(void);
 void set_device_name (std::string_view device_name);
 std::string_view get_device_name (void);
 
-void set_device_message (std::string_view device_message);
-std::string_view get_device_message (void);
+void set_device_message (std::string* device_message);
+std::string* get_device_message (void);
 
 /**
  * 
@@ -65,7 +84,7 @@ private:
 
     std::string_view device_name ;  /// device given name to recognition
 
-    std::unique_ptr<std::string_view> device_message;   /// smart pointer feature-> show the message on behalf of device like warning and error
+    std::shared_ptr<std::string> device_message;   /// smart pointer feature-> show the message on behalf of device like warning and error
                                                         ///< std::make_unique<std::string_view>("some message")
                                                         //std::unique_ptr<int> ptr = std::make_unique<int>(42);
 
@@ -80,7 +99,7 @@ bool device_power_control (bool device_power_state);
 
 bool device_working_level_adjustment (u_int8_t device_working_level) ;
 
-std::string_view update_device_message (std::string_view device_message);
+std::string update_device_message (std::string* device_message);
 
 bool device_reset (void) ;
      

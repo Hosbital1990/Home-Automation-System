@@ -16,7 +16,7 @@
  */
 
 #include <iostream>
-#include "device.h"
+#include "device_control.h"
 #include "camera.h"
 
 
@@ -31,10 +31,20 @@
 int main (){
 
 
-    
+/**
+ * @brief Welcome HAS project powered by Hosbital CO. 
+ * 
+ */    
 
-std::cout << "Hello! Home Automation System!" << std::endl ;
-std::cout << "Hello! Home Automation System!" << std::endl ;
+std::cout << "Welcome to Home Automation System Project" <<std::endl ;
+
+Device_Control* device {new Device_Control(false, 0, 10, "MusicPlayer", []()->std::string*{
+
+      static std::string message = "No Message";
+    return &message;
+}()) } ;
+
+
 
 return 0;
 

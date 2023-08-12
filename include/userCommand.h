@@ -2,7 +2,6 @@
 #define USER_COMMAND_H
         
 #include <iostream>
-#include "device_control.h"
 #include "door.h"
 #include <vector>
 
@@ -10,11 +9,11 @@
  struct DetectedCommand
 {
     /* data */
-    uint8_t targetDevice ;      /// who is the device
-    uint8_t commandType;   ///  what is the command type according to the device like open the parking door
-    uint8_t userId;        ///  who is the user
-    uint8_t platfrom;
-    uint8_t CRC;
+    int targetDevice ;      /// who is the device
+    int commandType;   ///  what is the command type according to the device like open the parking door
+    int userId;        ///  who is the user
+    int platfrom;
+    int CRC;
 };
 
 struct DeviceAck

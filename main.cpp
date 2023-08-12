@@ -16,7 +16,6 @@
  */
 
 #include <iostream>
-#include "device_control.h"
 #include "camera.h"
 #include "userCommand.h"
 #include <centralProcessing.h>

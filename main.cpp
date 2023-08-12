@@ -18,16 +18,9 @@
 #include <iostream>
 #include "device_control.h"
 #include "camera.h"
+#include "userCommand.h"
+#include <centralProcessing.h>
 
-
-/**
- * \brief HAS Project
- * 
- * \author Hosbital
- * 
- * Hosseinbitalebi@gmail.com 
- * 
-*/
 int main (){
 
 
@@ -38,13 +31,10 @@ int main (){
 
 std::cout << "Welcome to Home Automation System Project" <<std::endl ;
 
-Device_Control* device {new Device_Control(false, 0, 10, "MusicPlayer", []()->std::string*{
 
-      static std::string message = "No Message";
-    return &message;
-}()) } ;
+CentralProcessing central_processing ; 
 
-
+central_processing.systemInitilizer();
 
 return 0;
 

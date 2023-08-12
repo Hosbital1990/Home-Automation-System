@@ -17,7 +17,7 @@
  *         devices with Home Automation System (HAS)
  * 
 */
-class Device_Control {
+class DeviceControl {
 
 public:
 
@@ -29,7 +29,7 @@ public:
 */
 
 /// @brief Defualt constructor
-Device_Control(): device_power_state(false), device_message(std::make_unique<std::string>("")) {} //
+DeviceControl(): device_power_state(false), device_message(std::make_unique<std::string>("")) {} //
 
 
 /// @brief entire constructor
@@ -38,8 +38,8 @@ Device_Control(): device_power_state(false), device_message(std::make_unique<std
 /// @param device_address 
 /// @param device_name 
 /// @param device_message 
-Device_Control(bool device_power_state, u_int8_t device_working_level, 
-int device_address, std::string_view device_name, std::string* device_message);
+DeviceControl(bool device_power_state, u_int8_t device_working_level, 
+int device_address, std::string_view device_name, std::string device_message);
 
 /**
  * 
@@ -66,7 +66,7 @@ std::string* get_device_message (void);
  * \brief device Class Desructor
  * 
 */
-~Device_Control(){}
+~DeviceControl(){}
 
 protected:
 
@@ -76,7 +76,7 @@ protected:
  * 
 */
 
-virtual bool device_power_control (bool device_power_state);
+virtual bool device_power_control (bool device_power_state) const;
 
 virtual bool device_working_level_adjustment (u_int8_t device_working_level) ;
 

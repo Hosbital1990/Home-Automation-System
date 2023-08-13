@@ -35,6 +35,11 @@ CentralProcessing central_processing ;
 
 central_processing.systemInitilizer();
 
+while (true)
+{
+    /* code */
+}
+
 return 0;
 
 }

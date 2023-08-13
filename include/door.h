@@ -4,8 +4,10 @@
 #include<iostream>
 #include "device.h"
 
-class door : public Device
+class Door : public Device
 {
+
+//Door() =default;
 
 public:
 /// @brief 
@@ -15,18 +17,28 @@ public:
 /// @param power_state Electricite connected or not
 /// @param device_name 
 /// @param device_message keep device message
-door(int door_state, int door_type, bool door_lock, int power_state, std::string device_name, std::string device_message);
-~door();
+Door(int door_type=0, int door_state=0, bool door_lock=true, int power_state=false,
+            std::string device_name="DooR", std::string device_message="No Message");
+
+int  update_device_message(std::string new_message) override;
+bool control_device_power(int new_power_state, int door_type) override;
+
+~Door();
+
+protected:
+
 
 private:
-int  door_state;
+
 int  door_type;
+int  door_state;
 bool door_lock;
 
+bool toggle_gpio_pin (int pinNumber, int portNumber);
+
+bool readMessage (std::string* device_message);
 
 
-bool control_device_power(int new_power_state) override;
-bool update_device_message(std::string new_message) override;
 
 
 

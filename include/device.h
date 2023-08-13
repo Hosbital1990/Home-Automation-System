@@ -25,18 +25,24 @@ public:
     void set_device_name(std::string device_name);
     std::string get_device_name(void);
 
+
+    virtual int update_device_message(std::string new_message)=0;
+    virtual bool control_device_power(int new_power_state, int door_type) =0;
+                
     /// @brief desructor
     ~Device();
     protected:
     /// @brief Private functions
-    virtual bool control_device_power(int new_power_state);
-    virtual bool update_device_message(std::string new_message);
+
+
+    int power_state;
+    std::string device_message;
+
 
     private:
     /// @brief Private variables
-    int power_state;
+
     std::string device_name;
-    std::string device_message;
 
     
 

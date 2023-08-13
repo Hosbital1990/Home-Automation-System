@@ -27,6 +27,10 @@ return this->device_name;
 
 
 
-Device::~Device(){};
+Device::~Device(){
+
+        std::cout<<"Device Object Destroied\n";
+
+};
 
 

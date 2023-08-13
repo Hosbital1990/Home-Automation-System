@@ -19,7 +19,8 @@
 #include "camera.h"
 #include "userCommand.h"
 #include <centralProcessing.h>
-
+#include <thread>
+#include<chrono>
 int main (){
 
 
@@ -38,6 +39,7 @@ central_processing.systemInitilizer();
 while (true)
 {
     /* code */
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 }
 
 return 0;

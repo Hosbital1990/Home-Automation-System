@@ -36,7 +36,7 @@ bool door_lock;
 
 bool toggle_gpio_pin (int pinNumber, int portNumber);
 
-bool readMessage (std::string* device_message);
+bool readMessage (void);
 
 
 

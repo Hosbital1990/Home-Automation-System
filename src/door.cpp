@@ -56,7 +56,7 @@ bool Door::control_device_power(int new_power_state, int door_type)
 
 int Door::update_device_message(std::string new_message)
 {
-    std::thread updateMessageThread(&Door::readMessage, this, &new_message );
+    std::thread updateMessageThread(&Door::readMessage, this );
     updateMessageThread.detach();
     return 1;
 }
@@ -69,7 +69,7 @@ bool Door::toggle_gpio_pin (int pinNumber, int portNumber){
     return true;
 }
 
-bool Door::readMessage(std::string* device_message){
+bool Door::readMessage(){
 
     bool updatingMessage=true;
 
@@ -80,11 +80,11 @@ bool Door::readMessage(std::string* device_message){
     {
 
     int randomValue = std::rand() % 100 + 1; // Generate a random integer between 1 and 100
-    *device_message= "Nothing for Update! Number: "+std::to_string(randomValue) ;
+    Device::device_message= "Nothing for Update! Number: "+std::to_string(randomValue) ;
 
         // Sleep the thread for 1000 milliseconds (1 second)
     std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-        std::cout << device_message << std::endl ;
+        std::cout << Device::device_message << std::endl ;
 
     }
     
@@ -92,6 +92,9 @@ bool Door::readMessage(std::string* device_message){
 }
 
 
-Door::~Door(){}
+Door::~Door(){
+
+    std::cout<<"Door Object Destroied\n";
+}
 
 

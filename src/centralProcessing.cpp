@@ -39,19 +39,21 @@ CentralProcessing *CentralProcessing::systemInitilizer()
     ///\brief Determine the corresponding device and run its thread
 
     [&](){
-
                 std::cout << receive_detected_command.targetDevice << std::endl;
                 std::cout << receive_detected_command.commandType << std::endl;
                 std::cout << receive_detected_command.userId << std::endl;
                 std::cout << receive_detected_command.platfrom << std::endl;
                 std::cout << receive_detected_command.CRC << std::endl;
-
-
     }();
+
+    // delete start_user_command;
+    // delete deviceDoor; 
 
     return this;
 }
 
 CentralProcessing::~CentralProcessing()
 {
+        std::cout<<"Central Processing Object Destroied\n";
+
 }

@@ -66,4 +66,6 @@ void UserCommand::detect_user_command(std::vector<char>* raw_data, DetectedComma
     UserCommand::~UserCommand(){
 
         delete this->command_packet ;
+                std::cout<<"User Command Object Destroied\n";
+
     }

@@ -35,7 +35,6 @@ CentralProcessing *CentralProcessing::systemInitilizer()
     std::future<int> async_door_handler = std::async(std::launch::async, &Device::update_device_message, deviceDoor, textMessage ) ;
    // std::future<bool> async_door_handler = std::async(std::launch::async, &Door::, deviceDoor, textMessage);
 
-   // async_door_handler.get();
     ///\brief Determine the corresponding device and run its thread
 
     [&](){
@@ -48,6 +47,7 @@ CentralProcessing *CentralProcessing::systemInitilizer()
 
     // delete start_user_command;
     // delete deviceDoor; 
+    std::cout << async_door_handler.get() << std::endl;
 
     return this;
 }

@@ -36,11 +36,14 @@ CentralProcessing central_processing ;
 
 central_processing.systemInitilizer();
 
-while (true)
-{
-    /* code */
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-}
+// while (true)
+// {
+//     /* code */
+//     std::this_thread::sleep_for(std::chrono::milliseconds(100000));
+// }
+
+  //  std::this_thread::sleep_for(std::chrono::milliseconds(10000));
+
 
 return 0;
 

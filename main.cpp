@@ -21,6 +21,7 @@
 #include <centralProcessing.h>
 #include <thread>
 #include<chrono>
+
 int main (){
 
 
@@ -29,7 +30,7 @@ int main (){
  * 
  */    
 
-std::cout << "Welcome to Home Automation System Project" <<std::endl ;
+std::cout << "Welcome to Home Automation System Project" <<std::endl;
 
 
 CentralProcessing central_processing ; 

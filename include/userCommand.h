@@ -6,6 +6,8 @@
 #include <vector>
 
 
+struct commandStruct ; // forward decleration
+
  struct DetectedCommand
 {
     /* data */
@@ -72,7 +74,7 @@ class UserCommand
 {
 
 public:
-    UserCommand(double commandCounter);
+    UserCommand(double commandCounter, commandStruct& command_struture );
     ~UserCommand();
 
 DetectedCommand provide_user_command () ;
@@ -84,6 +86,7 @@ double commandCounter ;
 
 std::string_view* command_packet;
 
+commandStruct& command_struture ;
 
 std::vector<char> receive_user_data();
 

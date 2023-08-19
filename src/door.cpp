@@ -81,9 +81,9 @@ bool Door::readMessage(){
     int randomValue = std::rand() % 100 + 1; // Generate a random integer between 1 and 100
     Device::device_message= "Nothing for Update! Number: "+std::to_string(randomValue) ;
 
-        // Sleep the thread for 1000 milliseconds (1 second)
+    // Sleep the thread for 1000 milliseconds (1 second)
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
-        std::cout << Device::device_message << std::endl ;
+    std::cout << Device::device_message << std::endl ;
 
     }
     

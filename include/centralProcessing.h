@@ -2,11 +2,11 @@
 #define CENTRAL_PROCESSING_H
 
 #include <iostream>
-#include "userCommand.h"
-
 #include <mutex>
 #include <condition_variable>
 #include <queue>
+
+ struct DetectedCommand;  //Forward declaration
 
 struct commandStruct
 {

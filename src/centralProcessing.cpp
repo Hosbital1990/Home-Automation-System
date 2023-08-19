@@ -22,7 +22,7 @@ CentralProcessing *CentralProcessing::systemInitilizer()
      *  @param with default constructor 
     */
     Device* deviceDoor= new Door();
-    //Door* doorObject = new Door();
+
     std::string textMessage= "first_message" ;
     std::future<DetectedCommand> async_user_command= std::async(std::launch::async, &UserCommand::provide_user_command, start_user_command);
 

@@ -26,7 +26,6 @@ received_raw_packet= UserCommand::receive_user_data();
 UserCommand::detect_user_command(&received_raw_packet, &detected_command );
 
     std::unique_lock<std::mutex> lock(command_struture.share_mtx); 
-    
     command_struture.cv.wait(lock, [&](){return command_struture.command_queue.empty();});  // wait until Device empty the queue 
     command_struture.command_queue.push(detected_command);
     command_struture.cv.notify_all();

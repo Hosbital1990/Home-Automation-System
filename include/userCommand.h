@@ -18,58 +18,6 @@ struct commandStruct ; // forward decleration
     int CRC;
 };
 
-struct DeviceAck
-{
-
-    std::string_view deviceName;  
-    std::string_view message;
-    bool mission ;  /// Complete or failed
-
-};
-
-enum DeviceName{
-
-    DOOR,
-    AIR_CONDITIONER,
-    LIGHT,
-    PRINTER,
-    WATERING
-
-};
-enum DoorType{
-
-    PARKING_DOOR,
-    ENTERANCE_DOOR,
-    OUTSIDE_DOOR
-
-};
-enum DoorLockState{
-
-    CLOSE,
-    OPEN,
-
-};
-
-enum PowerState{
-
-    POWER_OFF,
-    POWER_ON
-
-};
-enum WorkingLevel{
-
-    NO_LEVEL_DEFINED=0,
-
-    EXTRA_LOW_LEVEL,
-    LOW_LEVEL,
-    UPPER_LOW_LEVEL,
-    MEDIUM_LEVEL,
-    LOWER_HIGH_LEVEL,
-    HIGH_LEVEL,
-    EXTRA_HIGH_LEVEL
-
-};
-
 class UserCommand
 {
 

@@ -4,6 +4,14 @@
 #include<iostream>
 #include "device.h"
 
+enum DoorType{
+
+    PARKING_DOOR,
+    ENTERANCE_DOOR,
+    OUTSIDE_DOOR
+
+};
+
 class Door : public Device
 {
 

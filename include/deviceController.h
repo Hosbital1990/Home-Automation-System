@@ -1,9 +1,11 @@
 #ifndef DEVICE_CONTROLLER_H
 #define DEVICE_CONTROLLER_H
+
 #include "device.h"
 
 struct DetectedCommand;  //Forward declaration -> from userCommand.h
 struct commandStruct ; // forward decleration  -> from centralProcessing.h
+//enum DooRCommandType; // // forward decleration  -> from door.h
 
 struct DeviceAck
 {

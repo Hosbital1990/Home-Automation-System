@@ -6,7 +6,7 @@
 #include "deviceController.h"
 #include "userCommand.h"
 #include "centralProcessing.h"
-
+#include "door.h"
 
 DeviceController::DeviceController(commandStruct& command_struct)
 : command_struct(command_struct)
@@ -26,6 +26,8 @@ void DeviceController::apply_user_command(){
     DetectedCommand detected_command;
     // you can extend the other devices object regarding the later odification
 
+    //Also maybe here cant be potencial of Rpi interfaces insitial and setup palce
+
     while (true){
 
         std::unique_lock<std::mutex> lock(command_struct.share_mtx);
@@ -39,24 +41,53 @@ void DeviceController::apply_user_command(){
         {
         case  TargetDevice::DOOR :
 
-            // Compelete Here-> define the related task according to the command type
+                switch (detected_command.commandType)
+                {
+                case DooRCommandType::DOOR_POWER_CONNECT :
 
-            break;
-                case  TargetDevice::AIR_CONDITIONER :
-            /* code */
-            break;
+                    // as a suggestion it is good if you can consider use of exception handler like try
 
-                    case  TargetDevice::LIGHT :
-            /* code */
-            break;
+                   if( !deviceDoor->control_device_power(detected_command.commandType,0)){ // 0 means parking door
 
-                    case  TargetDevice::PRINTER :
-            /* code */
-            break;
+                        std::cout << "Somethings went wrong!!!!:  to solve ask it operator";
+                    } 
+                    
+                    break;
 
-                    case  TargetDevice::WATERING :
-            /* code */
-            break;
+                case DooRCommandType::DOOR_POWER_DISCONNECT :
+                   if( !deviceDoor->control_device_power(detected_command.commandType,0)){ // 0 means parking door
+
+                        std::cout << "Somethings went wrong!!!!:  to solve ask it operator";
+                    } 
+                      break;
+                      
+                case DooRCommandType::DOOR_OPEN :
+                    /* code */
+                    break;
+
+                case DooRCommandType::DOOR_CLOSE :
+                    /* code */
+                    break;
+
+
+                default:
+                    break;
+                }
+
+
+        break;
+            case  TargetDevice::AIR_CONDITIONER :
+        /* code */
+        break;
+            case  TargetDevice::LIGHT :
+        /* code */
+        break;
+            case  TargetDevice::PRINTER :
+        /* code */
+        break;
+            case  TargetDevice::WATERING :
+        /* code */
+        break;
 
         default:
             break;

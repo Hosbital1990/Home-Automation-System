@@ -20,7 +20,7 @@ Door::Door(int door_type, int door_state, bool door_lock, int power_state,
 bool Door::control_device_power(int new_power_state, int door_type)
 {
     if (this->power_state == new_power_state){
-
+            std::cout << "Nothing Happened, Door power has already been connected!";
         return true; //State doesnt need to change
     }
     else if(this->power_state != new_power_state){
@@ -32,20 +32,21 @@ bool Door::control_device_power(int new_power_state, int door_type)
         if (door_type == PARKING_DOOR ){
             int pinNumber= 1;
             int portNumber= 10;
+            std::cout << " Parking Door power connected!";
             return toggle_gpio_pin (pinNumber, portNumber);
-
         }
-        else if(door_type == ENTERANCE_DOOR){
 
+        else if(door_type == ENTERANCE_DOOR){
             int pinNumber = 2;
             int portNumber= 20;
+                        std::cout << " Entrance Door power connected!";
             return toggle_gpio_pin (pinNumber, portNumber);
-
         }
-        else if (door_type == OUTSIDE_DOOR){
 
+        else if (door_type == OUTSIDE_DOOR){
             int pinNumber= 3;
             int portNumber= 30;
+        std::cout << " Outside Door power connected!";
          return toggle_gpio_pin (pinNumber, portNumber);
 
         }

@@ -12,6 +12,14 @@ enum DoorType{
 
 };
 
+enum DooRCommandType{
+
+    DOOR_POWER_CONNECT,
+    DOOR_POWER_DISCONNECT,
+    DOOR_OPEN,
+    DOOR_CLOSE
+};
+
 class Door : public Device
 {
 
@@ -25,8 +33,8 @@ public:
 /// @param power_state Electricite connected or not
 /// @param device_name 
 /// @param device_message keep device message
-Door(int door_type=0, int door_state=0, bool door_lock=true, int power_state=false,
-            std::string device_name="DooR", std::string device_message="No Message");
+Door(int door_type= PARKING_DOOR , int door_state=0, bool door_lock=true, int power_state=false,
+     std::string device_name="DooR", std::string device_message="No Message");
 
 int  update_device_message(std::string new_message) override;
 bool control_device_power(int new_power_state, int door_type) override;

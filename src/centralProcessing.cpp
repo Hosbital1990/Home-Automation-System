@@ -6,6 +6,7 @@
 #include <mutex>
 #include "door.h"
 #include <functional>
+#include "deviceController.h"
 
 CentralProcessing::CentralProcessing(){
 
@@ -16,25 +17,15 @@ CentralProcessing::CentralProcessing(){
 CentralProcessing *CentralProcessing::systemInitilizer()
 {
     commandStruct command_struct;
-    UserCommand* start_user_command = new UserCommand(0, command_struct);
-    
-    /** @brief Polymorphism creat the object of all included devices
-     *  @param with default constructor 
-    */
-    Device* deviceDoor= new Door();
+    UserCommand* start_user_command = new UserCommand(0, command_struct);  /// creat object of user coomand
+    DeviceController* device_contrller = new DeviceController(command_struct);  // creat object of device controller
 
-    std::string textMessage= "first_message" ;
-    std::future<DetectedCommand> async_user_command= std::async(std::launch::async, &UserCommand::provide_user_command, start_user_command);
+   std::future<DetectedCommand> async_user_command= std::async(std::launch::async, &UserCommand::provide_user_command, start_user_command);
 
    // DetectedCommand receive_detected_command= async_user_command.get();  ///Be sure .get() func doesnt get any things since be sure data is valid
 
-    std::future<int> async_door_handler = std::async(std::launch::async, &Device::update_device_message, deviceDoor, textMessage ) ;
+    std::future<void> async_door_handler = std::async(std::launch::async, &DeviceController::apply_user_command, device_contrller ) ;
    // std::future<bool> async_door_handler = std::async(std::launch::async, &Door::, deviceDoor, textMessage);
-
-
-    // delete start_user_command;
-    // delete deviceDoor; 
-    std::cout << async_door_handler.get() << std::endl;
 
     return this;
 }

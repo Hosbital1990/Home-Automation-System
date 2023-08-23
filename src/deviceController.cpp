@@ -24,6 +24,7 @@ void DeviceController::apply_user_command(){
 
     Device* deviceDoor = new Door();
     DetectedCommand detected_command;
+    int counter {0};
     // you can extend the other devices object regarding the later odification
 
     //Also maybe here cant be potencial of Rpi interfaces insitial and setup palce
@@ -32,11 +33,11 @@ void DeviceController::apply_user_command(){
 
         std::unique_lock<std::mutex> lock(command_struct.share_mtx);
         command_struct.cv.wait(lock, [this](){return !command_struct.command_queue.empty();});
+        std::cout << "I am first One \n";
         detected_command = command_struct.command_queue.front();
         command_struct.command_queue.pop();
-        command_struct.share_mtx.unlock();
-        command_struct.cv.notify_all();
-
+        // command_struct.share_mtx.unlock();
+        command_struct.cv.notify_one();
         switch (detected_command.targetDevice)
         {
         case  TargetDevice::DOOR :
@@ -49,7 +50,7 @@ void DeviceController::apply_user_command(){
 
                    if( !deviceDoor->control_device_power(detected_command.commandType,0)){ // 0 means parking door
 
-                        std::cout << "Somethings went wrong!!!!:  to solve ask it operator";
+                        std::cout << "Somethings went wrong!!!!:  to solve ask it operator\n";
                     } 
                     
                     break;
@@ -57,7 +58,7 @@ void DeviceController::apply_user_command(){
                 case DooRCommandType::DOOR_POWER_DISCONNECT :
                    if( !deviceDoor->control_device_power(detected_command.commandType,0)){ // 0 means parking door
 
-                        std::cout << "Somethings went wrong!!!!:  to solve ask it operator";
+                        std::cout << "Somethings went wrong!!!!:  to solve ask it operator\n";
                     } 
                       break;
                       
@@ -92,7 +93,7 @@ void DeviceController::apply_user_command(){
         default:
             break;
         }
-
+            std::cout << "Loop cout: " << ++counter << std::endl ;
     }
 
 

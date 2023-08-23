@@ -1,7 +1,7 @@
 #include "userCommand.h"
 #include  <vector>
 #include "centralProcessing.h"
-
+#include <thread>
 
 UserCommand::UserCommand(double commandCounter, commandStruct& command_struture )
 : commandCounter(commandCounter), command_struture(command_struture)
@@ -19,16 +19,18 @@ DetectedCommand UserCommand::provide_user_command(void){
 std::vector<char> received_raw_packet;
 
 DetectedCommand detected_command ;
-
-while(true){
+std::string InputUser;
+while(true){ // this will alive during the whole project tile life
 received_raw_packet= UserCommand::receive_user_data();
 
 UserCommand::detect_user_command(&received_raw_packet, &detected_command );
 
     std::unique_lock<std::mutex> lock(command_struture.share_mtx); 
     command_struture.cv.wait(lock, [&](){return command_struture.command_queue.empty();});  // wait until Device empty the queue 
+    std::cout << "Please Enter Value: \n"; 
+    std::cin >> InputUser;
     command_struture.command_queue.push(detected_command);
-    command_struture.cv.notify_all();
+    command_struture.cv.notify_one();
 }
     return detected_command;
 }
@@ -61,8 +63,8 @@ return received_raw_packet;
 
 void UserCommand::detect_user_command(std::vector<char>* raw_data, DetectedCommand* detected_command)
 {
-    detected_command->targetDevice = raw_data->at(0);
-    detected_command->commandType = raw_data->at(1);
+    detected_command->targetDevice = 0;//raw_data->at(0);
+    detected_command->commandType = 0;//raw_data->at(1);
     detected_command->userId = raw_data->at(2);
     detected_command->platfrom = raw_data->at(3);
     detected_command->CRC = raw_data->at(4);

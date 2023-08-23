@@ -35,7 +35,10 @@ std::cout << "Welcome to Home Automation System Project" <<std::endl;
 
 CentralProcessing central_processing ; 
 
-central_processing.systemInitilizer();
+std::thread secondMainThread (&CentralProcessing::systemInitilizer, &central_processing);
+//central_processing.systemInitilizer();
+
+secondMainThread.join();
 
 // while (true)
 // {

@@ -6,12 +6,12 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include/",
                 "/usr/include/**",
-                "/home/bitalebi/Project/Home_Automation_System/include/**"
+                "/home/bitalebi/Project/Home-Automation-System-main/include/**"
             ],
             "defines": [],
             "cStandard": "c17",
             "cppStandard": "c++17",
-            "intelliSenseMode": "linux-clang-x64",
+            "intelliSenseMode": "linux-clang-arm64",
             "compilerPath": "/usr/bin/g++-13"
         }
     ],
